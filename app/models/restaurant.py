@@ -1,13 +1,11 @@
 from app import db
 
-Model = db.Model
-Column = db.Column
-
-class Restaurant(Model):
+class Restaurant(db.Model):
     __tablename__ ='restaurants'
-    id = Column(db.Integer)
-    owner_id = Column(db.Integer) # relation in User
-    restaurant_name = Column(db.Integer(64))
+    id = db.Column(db.Integer, primary_key=True)
+    menus = db.relationship('Menu', backref='restaurant', lazy=True)
+    owner_id = db.Column(db.Integer) # relation in User
+    restaurant_name = db.Column(db.Integer(64))
 
     def __repr__(self):
         return '<Restaurant %r' % self.restaurant_name
