@@ -8,4 +8,8 @@ class UserSchema(ma.Schema):
 
 class RestaurantSchema(ma.Schema):
     class Meta:
-        fields = ("owner_id", "restaurant_name")
+        fields = ("restaurant_name", "id")
+
+class MenuSchema(ma.Schema):
+    class Meta:
+        fields = ("product", "price", "description", "image")

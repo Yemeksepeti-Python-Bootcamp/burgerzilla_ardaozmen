@@ -13,7 +13,7 @@ class Permission:
     WRITE = 4
     MODERATE = 8
     ADMIN = 16
-
+    
 
 class Role(Model):
     __tablename__ = "roles"
@@ -85,6 +85,8 @@ class User(Model):
     joined_date = Column(db.DateTime, default=datetime.utcnow)
     role_id = Column(db.Integer, db.ForeignKey("roles.id"))
     
+    # role_description = Column(db.String(64), db.ForeignKey("roles.description"))
+
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
 

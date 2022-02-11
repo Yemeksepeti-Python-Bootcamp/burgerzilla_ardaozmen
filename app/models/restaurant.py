@@ -5,7 +5,7 @@ class Restaurant(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     menus = db.relationship('Menu', backref='restaurant', lazy=True)
     owner_id = db.Column(db.Integer) # relation in User
-    restaurant_name = db.Column(db.Integer(64))
+    restaurant_name = db.Column(db.String(64))
 
     def __repr__(self):
         return '<Restaurant %r' % self.restaurant_name
