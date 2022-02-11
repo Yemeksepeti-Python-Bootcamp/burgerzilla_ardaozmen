@@ -13,3 +13,7 @@ class RestaurantSchema(ma.Schema):
 class MenuSchema(ma.Schema):
     class Meta:
         fields = ("product", "price", "description", "image")
+
+class OrderSchema(ma.Schema):
+    class Meta:
+        fields = ("user_id", "status")
