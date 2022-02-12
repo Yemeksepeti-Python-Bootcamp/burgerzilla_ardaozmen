@@ -4,14 +4,17 @@ from flask import current_app
 from flask_jwt_extended import create_access_token
 
 from app import db
-from app.models.restaurant import Restaurant
 from app.utils import message,err_resp, internal_err_resp
+from app.models.menu import Menu
+from app.models.restaurant import Restaurant
+from app.models.order import Order
 from app.models.user import User
-from app.models.schemas import MenuSchema, RestaurantSchema, UserSchema
+from app.models.schemas import MenuSchema, RestaurantSchema, UserSchema, OrderSchema
 
 user_schema = UserSchema()
 menu_schema = MenuSchema()
 restaurant_schema = RestaurantSchema()
+order_schema = OrderSchema()
 
 class AuthService:
     @staticmethod

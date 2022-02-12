@@ -16,3 +16,4 @@ class Order(db.Model):
     restaurant_id = db.Column(db.Integer)
     status = db.Column(db.Enum(OrderStatus))
     # TODO this model will be updated
+
