@@ -1,3 +1,5 @@
+import enum
+
 from datetime import datetime
 from app import db, bcrypt
 
@@ -73,16 +75,20 @@ class Role(Model):
         self.permissions = 0
 
 
+
+class UserType(enum.Enum):
+    customer=1
+    restaurant=2
+
 class User(Model):
     """ User model for storing user related data """
-
     id = Column(db.Integer, primary_key=True)
+    type = Column(db.Enum(UserType), default=1)
     email = Column(db.String(64), unique=True, index=True)
     username = Column(db.String(15), unique=True, index=True)
     name_surname = Column(db.String(64))
     password_hash = Column(db.String(128))
     joined_date = Column(db.DateTime, default=datetime.utcnow)
-    # role_id = Column(db.Integer, db.ForeignKey("roles.id"))
     
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)

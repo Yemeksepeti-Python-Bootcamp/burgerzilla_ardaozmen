@@ -1,9 +1,8 @@
 from app import ma
-from .user import User
 
 class UserSchema(ma.Schema):
     class Meta:
-        fields = ("email", "name_surname", "username", "joined_date")
+        fields = ("email", "name_surname", "username", "type", "joined_date")
 
 class RestaurantSchema(ma.Schema):
     class Meta:

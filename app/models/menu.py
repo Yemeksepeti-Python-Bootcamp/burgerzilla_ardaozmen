@@ -11,6 +11,7 @@ class Menu(db.Model):
     description = db.Column(db.String(256))
     image = db.Column(db.String(128))
     created_on = db.Column(db.DateTime, default=datetime.utcnow)
+    orders = db.relationship('Order', backref='menu', lazy='dynamic')
 
     def __repr__(self) -> str:
-        return '<Restaurant id {}>'.format(self.restaurant_id)
+        return '<Menus Restaurant id {}>'.format(self.restaurant_id)
