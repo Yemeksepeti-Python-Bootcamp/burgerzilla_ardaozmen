@@ -8,7 +8,7 @@ from .dto import OrderDto
 api = OrderDto.api
 data_resp = OrderDto.data_resp
 
-@api.route("/<integer:order_id>")
+@api.route("/<int:order_id>")
 class OrderGet(Resource):
     @api.doc("get specified order data", responses={
         200:("Success",data_resp),

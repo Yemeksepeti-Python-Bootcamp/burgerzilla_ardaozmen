@@ -4,7 +4,7 @@ from flask import current_app
 from app.utils import err_resp,internal_err_resp, message
 from app.models.order import Order
 
-class MenuService:
+class OrderService:
     @staticmethod
     def get_order_data(order_id):
         # get all order data

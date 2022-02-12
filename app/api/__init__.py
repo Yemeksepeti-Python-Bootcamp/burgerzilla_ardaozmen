@@ -7,7 +7,7 @@ from .order.controller import api as order_ns
 from .menu.controller import api as menu_ns
 
 api_bp = Blueprint("api", __name__)
-api = Api(api_bp, version="1.", title="API", description="API")
+api = Api(api_bp, version="1.0", title="BurgerZilla API Services", description="API")
 
 
 api.add_namespace(user_ns)
