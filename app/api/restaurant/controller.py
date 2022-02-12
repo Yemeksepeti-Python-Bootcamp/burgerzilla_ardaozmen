@@ -8,7 +8,7 @@ from .dto import RestaurantDto
 api = RestaurantDto.api
 data_resp = RestaurantDto.data_resp
 
-@api.route("/<integer:menu_id>")
+@api.route("/<int:menu_id>")
 class MenuGet(Resource):
     @api.doc("get specified menu data", responses={
         200:("Success",data_resp),
