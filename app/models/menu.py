@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Menu(db.Model):
     """ Menu model for storing menu related data """
-    __tablename__ = 'menus'
+    __tablename__ = 'menu'
     id = db.Column(db.Integer, primary_key=True)
     restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurant.id'), index=True)
     name = db.Column(db.String(64))
