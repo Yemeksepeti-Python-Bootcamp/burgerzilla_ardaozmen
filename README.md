@@ -11,4 +11,6 @@
 
 ##### Creating New environment
 
+##### db migrate
+
 ##### Running

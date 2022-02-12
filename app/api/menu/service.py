@@ -7,7 +7,7 @@ from app.models.menu import Menu
 class MenuService:
     @staticmethod
     def get_menu_data(restaurand_id):
-    # get all menu data
+        # get all menu data
         if not (menu := Menu.query.filter_by(restaurand_id=restaurand_id).all()): 
             return err_resp("Menu Not Found","menu_404",404)
 
@@ -22,3 +22,11 @@ class MenuService:
             print("Error Menu",e)
             current_app.logger.error(e)
             return internal_err_resp()
+
+    # List menu products
+
+    # update menu
+
+    # delete menu item
+
+    
